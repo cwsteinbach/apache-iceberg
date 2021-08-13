@@ -76,33 +76,7 @@ The above list is in order of priority. For example: a matching catalog will tak
 
 ### Time travel
 
-To select a specific table snapshot or the snapshot at some time, Iceberg supports two Spark read options:
-
-* `snapshot-id` selects a specific table snapshot
-* `as-of-timestamp` selects the current snapshot at a timestamp, in milliseconds
-
-```scala
-// time travel to October 26, 1986 at 01:21:00
-spark.read
-    .option("as-of-timestamp", "499162860000")
-    .format("iceberg")
-    .load("path/to/table")
-```
-
-```scala
-// time travel to snapshot with ID 10963874102873L
-spark.read
-    .option("snapshot-id", 10963874102873L)
-    .format("iceberg")
-    .load("path/to/table")
-```
-
-!!! Note
-    Spark does not currently support using `option` with `table` in DataFrameReader commands. All options will be silently 
-    ignored. Do not use `table` when attempting to time-travel or use other options. Options will be supported with `table`
-    in [Spark 3.1 - SPARK-32592](https://issues.apache.org/jira/browse/SPARK-32592).
-
-Time travel is not yet supported by Spark's SQL syntax.
+Please see the [Time Travel](./time-travel.md) page for more details.
 
 ### Spark 2.4
 

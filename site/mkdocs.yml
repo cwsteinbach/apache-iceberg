@@ -35,7 +35,6 @@ extra:
 plugins:
   - redirects:
       redirect_maps:
-        'time-travel.md': 'spark-queries/#time-travel'
         'presto.md': 'trino.md'
   - markdownextradata  
 markdown_extensions:
@@ -72,7 +71,7 @@ nav:
     - Writes: spark-writes.md
     - Maintenance Procedures: spark-procedures.md
     - Structured Streaming: spark-structured-streaming.md
-    - Time Travel: spark-queries/#time-travel
+    - Time Travel: time-travel.md
   - Trino: https://trino.io/docs/current/connector/iceberg.html
   - Flink: flink.md
   - Hive: hive.md
